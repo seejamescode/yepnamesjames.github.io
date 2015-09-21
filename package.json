@@ -1,0 +1,30 @@
+{
+  "name": "seejamescode",
+  "version": "1.1.0",
+  "description": "Updating seejamescode.com with everything I have learnt in the past year.",
+  "author": "James Y. Rauhut <jamesrauhut@gmail.com>",
+  "license": "Private",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yepnamesjames/seejamescode/"
+  },
+  "bugs": {
+    "url": "https://github.com/yepnamesjames/seejamescode/issues"
+  },
+  "devDependencies": {
+    "browser-sync": "*",
+    "del": "*",
+    "gulp": "*",
+    "gulp-minify-css": "*",
+    "gulp-minify-html": "*",
+    "gulp-rename": "*",
+    "gulp-replace": "*",
+    "gulp-sass": "*",
+    "gulp-scss-lint": "^0.3.0",
+    "gulp-uglify": "^1.4.1",
+    "scsslint": "*"
+  },
+  "dependencies": {
+    "normalize.css": "*"
+  }
+}
