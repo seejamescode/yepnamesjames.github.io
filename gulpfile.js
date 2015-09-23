@@ -11,24 +11,21 @@ var sass = require('gulp-sass');
 var scsslint = require('gulp-scss-lint');
 var uglify = require('gulp-uglify');
 
-gulp.task('clean', function() {
-  return del(['static', 'production']);
+gulp.task('clean', function(cb) {
+  del(['static', 'production'], cb);
 });
 
-gulp.task('images', ['clean'], function() {
+gulp.task('images', function() {
     return gulp.src([
-                'images/**'
+                'images/**/*'
             ])
         .pipe(gulp.dest('static/images'))
         .pipe(gulp.dest('production/images'))
 });
 
-gulp.task('sass', ['clean'], function() {
+gulp.task('sass', ['scss-lint'], function() {
     return gulp.src(['css/*.scss'])
-        .pipe(scsslint({
-            'endless': true
-        }))
-        .pipe(sass({ includePaths : ['_/scss/'] }))
+        .pipe(sass().on('error', sass.logError))
         .pipe(addsrc([
                 'node_modules/normalize.css/normalize.css'
             ]))
@@ -38,7 +35,12 @@ gulp.task('sass', ['clean'], function() {
         .pipe(gulp.dest('production/css'))
 });
 
-gulp.task('js', ['clean'], function() {
+gulp.task('scss-lint', function() {
+  return gulp.src('css/*.scss')
+    .pipe(scsslint());
+});
+
+gulp.task('js', function() {
     return gulp.src([
                         'js/*.js'
                     ])
@@ -48,7 +50,7 @@ gulp.task('js', ['clean'], function() {
         .pipe(gulp.dest('production/js'))
 });
 
-gulp.task('html', ['clean'], function() {
+gulp.task('html', function() {
     var opts = {
         conditionals: true,
         spare:true,
@@ -82,7 +84,8 @@ gulp.task('watch', function() {
   gulp.watch('js/*.js', ['js']);
 });
 
-gulp.task('default', ['html', 'images', 'sass', 'js', 'browser-sync', 'watch']);
+gulp.task('build', ['html', 'images', 'sass', 'js'])
+gulp.task('default', ['watch', 'build', 'browser-sync']);
 
 
 
