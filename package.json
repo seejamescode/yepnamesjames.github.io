@@ -16,6 +16,7 @@
     "del": "*",
     "gulp": "*",
     "gulp-add-src": "^0.2.0",
+    "gulp-autoprefixer": "^3.0.1",
     "gulp-minify-css": "*",
     "gulp-minify-html": "*",
     "gulp-rename": "*",

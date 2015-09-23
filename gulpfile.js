@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 
 var addsrc = require('gulp-add-src');
+var autoprefixer = require('gulp-autoprefixer');
 var browserSync = require('browser-sync');
 var del = require('del');
 var minifyCSS = require('gulp-minify-css');
@@ -26,6 +27,10 @@ gulp.task('images', function() {
 gulp.task('sass', ['scss-lint'], function() {
     return gulp.src(['css/*.scss'])
         .pipe(sass().on('error', sass.logError))
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
         .pipe(addsrc([
                 'node_modules/normalize.css/normalize.css'
             ]))

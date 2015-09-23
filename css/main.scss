@@ -1,10 +1,35 @@
 .body {
   margin: 0;
-  padding: 1em;
+  padding: 0;
 }
 
 $blue: #00a7cd;
 
+// Font Sizing
+$scale: 1;
+$h1:  #{(4.236em * $scale)};
+$h2: #{(2.618em * $scale)};
+$h3: #{(1.618em * $scale)};
+$p: #{(1em * $scale)};
+$caption: #{(.618em * $scale)};
+
 .sky {
-  background-color: #00a7cd;
+  align-items: center;
+  background-color: $blue;
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  justify-content: center;
+  text-align: center;
+
+  .sky__title {
+    .sky__title__logo {
+      max-height: 50vh;
+      max-width: 100%;
+    }
+
+    .sky__title__slogan {
+      font-size: $h3;
+    }
+  }
 }
