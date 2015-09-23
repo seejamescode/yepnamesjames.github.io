@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 
+var addsrc = require('gulp-add-src');
 var browserSync = require('browser-sync');
 var del = require('del');
 var minifyCSS = require('gulp-minify-css');
@@ -9,6 +10,10 @@ var replace = require('gulp-replace');
 var sass = require('gulp-sass');
 var scsslint = require('gulp-scss-lint');
 var uglify = require('gulp-uglify');
+
+gulp.task('clean', function() {
+  return del(['static', 'production']);
+});
 
 gulp.task('images', ['clean'], function() {
     return gulp.src([
@@ -24,6 +29,9 @@ gulp.task('sass', ['clean'], function() {
             'endless': true
         }))
         .pipe(sass({ includePaths : ['_/scss/'] }))
+        .pipe(addsrc([
+                'node_modules/normalize.css/normalize.css'
+            ]))
         .pipe(gulp.dest('static/css'))
         .pipe(rename({suffix: '.min'}))
         .pipe(minifyCSS())
@@ -38,16 +46,6 @@ gulp.task('js', ['clean'], function() {
         .pipe(rename({suffix: '.min'}))
         .pipe(uglify())
         .pipe(gulp.dest('production/js'))
-});
-
-gulp.task('component_css', ['clean'], function() {
-    return gulp.src([
-                        'node_modules/normalize.css/normalize.css'
-                    ])
-        .pipe(gulp.dest('static/css'))
-        .pipe(rename({suffix: '.min'}))
-        .pipe(minifyCSS())
-        .pipe(gulp.dest('production/css'));
 });
 
 gulp.task('html', ['clean'], function() {
@@ -65,16 +63,6 @@ gulp.task('html', ['clean'], function() {
         .pipe(gulp.dest('production'))
 });
 
-var scsslint = require('gulp-scss-lint');
-
-gulp.task('clean', function(cb) {
-  return del([
-    'static/**/*',
-    'production/**/*'
-  ], cb);
-});
-
-
 gulp.task('browser-sync', function() {
     browserSync.init(['**/css/*', '**/js/*', '**/html/*', '**/images/*'], {
         server: {
@@ -86,12 +74,18 @@ gulp.task('browser-sync', function() {
     });
 });
 
-/* Watch Files For Changes */
+// Rerun the task when a file changes
 gulp.task('watch', function() {
-    gulp.watch(['html/*.html'], ['html']);
-    gulp.watch('images/**', ['images']);
-    gulp.watch(['css/*.scss'], ['sass']);
-    gulp.watch(['js/*.js'], ['js']);
+  gulp.watch('html/*.html', ['html']);
+  gulp.watch('images/**', ['images']);
+  gulp.watch('css/*.scss', ['sass']);
+  gulp.watch('js/*.js', ['js']);
 });
 
-gulp.task('default', ['clean', 'html', 'images', 'sass', 'js', 'component_css', 'watch', 'browser-sync']);
+gulp.task('default', ['watch', 'html', 'images', 'sass', 'js', 'browser-sync']);
+
+
+
+
+
+
