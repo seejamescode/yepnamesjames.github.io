@@ -82,7 +82,7 @@ gulp.task('watch', function() {
   gulp.watch('js/*.js', ['js']);
 });
 
-gulp.task('default', ['watch', 'html', 'images', 'sass', 'js', 'browser-sync']);
+gulp.task('default', ['html', 'images', 'sass', 'js', 'browser-sync', 'watch']);
 
 
 
