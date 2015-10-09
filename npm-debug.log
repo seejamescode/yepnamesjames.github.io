@@ -1,0 +1,122 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install' ]
+2 info using npm@2.11.2
+3 info using node@v0.12.5
+4 verbose readDependencies loading dependencies from /Users/jamesrauhut/seejamescode/package.json
+5 warn package.json seejamescode@1.1.0 license should be a valid SPDX license expression
+6 verbose install where, deps [ '/Users/jamesrauhut/seejamescode',
+6 verbose install   [ 'normalize.css',
+6 verbose install     'https://github.com/web-animations/web-animations-js.git',
+6 verbose install     'browser-sync',
+6 verbose install     'del',
+6 verbose install     'gulp',
+6 verbose install     'gulp-add-src',
+6 verbose install     'gulp-autoprefixer',
+6 verbose install     'gulp-minify-css',
+6 verbose install     'gulp-minify-html',
+6 verbose install     'gulp-rename',
+6 verbose install     'gulp-replace',
+6 verbose install     'gulp-sass',
+6 verbose install     'gulp-scss-lint',
+6 verbose install     'gulp-uglify',
+6 verbose install     'scsslint' ] ]
+7 verbose install where, peers [ '/Users/jamesrauhut/seejamescode', [] ]
+8 verbose installManyTop reading for lifecycle /Users/jamesrauhut/seejamescode/package.json
+9 info preinstall seejamescode@1.1.0
+10 verbose installManyTop reading scoped package data from /Users/jamesrauhut/seejamescode/node_modules/browser-sync/package.json
+11 verbose installManyTop reading scoped package data from /Users/jamesrauhut/seejamescode/node_modules/del/package.json
+12 verbose installManyTop reading scoped package data from /Users/jamesrauhut/seejamescode/node_modules/gulp/package.json
+13 verbose installManyTop reading scoped package data from /Users/jamesrauhut/seejamescode/node_modules/gulp-add-src/package.json
+14 verbose installManyTop reading scoped package data from /Users/jamesrauhut/seejamescode/node_modules/gulp-autoprefixer/package.json
+15 verbose installManyTop reading scoped package data from /Users/jamesrauhut/seejamescode/node_modules/gulp-minify-css/package.json
+16 verbose installManyTop reading scoped package data from /Users/jamesrauhut/seejamescode/node_modules/gulp-minify-html/package.json
+17 verbose installManyTop reading scoped package data from /Users/jamesrauhut/seejamescode/node_modules/gulp-rename/package.json
+18 verbose installManyTop reading scoped package data from /Users/jamesrauhut/seejamescode/node_modules/gulp-replace/package.json
+19 verbose installManyTop reading scoped package data from /Users/jamesrauhut/seejamescode/node_modules/gulp-sass/package.json
+20 verbose installManyTop reading scoped package data from /Users/jamesrauhut/seejamescode/node_modules/gulp-scss-lint/package.json
+21 verbose installManyTop reading scoped package data from /Users/jamesrauhut/seejamescode/node_modules/gulp-uglify/package.json
+22 verbose installManyTop reading scoped package data from /Users/jamesrauhut/seejamescode/node_modules/normalize.css/package.json
+23 verbose installManyTop reading scoped package data from /Users/jamesrauhut/seejamescode/node_modules/scsslint/package.json
+24 info package.json gulp-rename@1.2.2 No license field.
+25 info package.json scsslint@0.0.3 No license field.
+26 verbose readDependencies loading dependencies from /Users/jamesrauhut/seejamescode/package.json
+27 verbose targetResolver reading package data from /Users/jamesrauhut/seejamescode/node_modules/browser-sync/package.json
+28 verbose targetResolver reading package data from /Users/jamesrauhut/seejamescode/node_modules/del/package.json
+29 verbose targetResolver reading package data from /Users/jamesrauhut/seejamescode/node_modules/gulp/package.json
+30 verbose targetResolver reading package data from /Users/jamesrauhut/seejamescode/node_modules/gulp-add-src/package.json
+31 verbose targetResolver reading package data from /Users/jamesrauhut/seejamescode/node_modules/gulp-autoprefixer/package.json
+32 verbose targetResolver reading package data from /Users/jamesrauhut/seejamescode/node_modules/gulp-minify-css/package.json
+33 verbose targetResolver reading package data from /Users/jamesrauhut/seejamescode/node_modules/gulp-minify-html/package.json
+34 verbose targetResolver reading package data from /Users/jamesrauhut/seejamescode/node_modules/gulp-rename/package.json
+35 verbose targetResolver reading package data from /Users/jamesrauhut/seejamescode/node_modules/gulp-replace/package.json
+36 verbose targetResolver reading package data from /Users/jamesrauhut/seejamescode/node_modules/gulp-sass/package.json
+37 verbose targetResolver reading package data from /Users/jamesrauhut/seejamescode/node_modules/gulp-scss-lint/package.json
+38 verbose targetResolver reading package data from /Users/jamesrauhut/seejamescode/node_modules/gulp-uglify/package.json
+39 verbose targetResolver reading package data from /Users/jamesrauhut/seejamescode/node_modules/normalize.css/package.json
+40 verbose targetResolver reading package data from /Users/jamesrauhut/seejamescode/node_modules/scsslint/package.json
+41 verbose targetResolver reading package data from /Users/jamesrauhut/seejamescode/node_modules/.bin/browser-sync/package.json
+42 verbose targetResolver reading package data from /Users/jamesrauhut/seejamescode/node_modules/.bin/gulp/package.json
+43 verbose already installed skipping del@* /Users/jamesrauhut/seejamescode
+44 verbose already installed skipping gulp@* /Users/jamesrauhut/seejamescode
+45 verbose already installed skipping gulp-add-src@^0.2.0 /Users/jamesrauhut/seejamescode
+46 verbose already installed skipping gulp-autoprefixer@^3.0.1 /Users/jamesrauhut/seejamescode
+47 verbose already installed skipping gulp-minify-css@* /Users/jamesrauhut/seejamescode
+48 verbose already installed skipping gulp-minify-html@* /Users/jamesrauhut/seejamescode
+49 verbose already installed skipping gulp-rename@* /Users/jamesrauhut/seejamescode
+50 verbose already installed skipping gulp-replace@* /Users/jamesrauhut/seejamescode
+51 verbose already installed skipping gulp-sass@* /Users/jamesrauhut/seejamescode
+52 verbose already installed skipping gulp-scss-lint@^0.3.0 /Users/jamesrauhut/seejamescode
+53 verbose already installed skipping gulp-uglify@^1.4.1 /Users/jamesrauhut/seejamescode
+54 verbose already installed skipping scsslint@* /Users/jamesrauhut/seejamescode
+55 verbose already installed skipping normalize.css@* /Users/jamesrauhut/seejamescode
+56 silly cache add args [ 'https://github.com/web-animations/web-animations-js.git@*',
+56 silly cache add   null ]
+57 verbose cache add spec https://github.com/web-animations/web-animations-js.git@*
+58 verbose already installed skipping browser-sync@* /Users/jamesrauhut/seejamescode
+59 silly cache add parsed spec { raw: 'https://github.com/web-animations/web-animations-js.git@*',
+59 silly cache add   scope: null,
+59 silly cache add   name: null,
+59 silly cache add   rawSpec: 'https://github.com/web-animations/web-animations-js.git@*',
+59 silly cache add   spec: 'git+https://github.com/web-animations/web-animations-js.git%40*.git',
+59 silly cache add   type: 'hosted',
+59 silly cache add   hosted:
+59 silly cache add    { type: 'github',
+59 silly cache add      ssh: 'git@github.com:web-animations/web-animations-js.git%40*.git',
+59 silly cache add      sshUrl: 'git+ssh://git@github.com/web-animations/web-animations-js.git%40*.git',
+59 silly cache add      httpsUrl: 'git+https://github.com/web-animations/web-animations-js.git%40*.git',
+59 silly cache add      gitUrl: 'git://github.com/web-animations/web-animations-js.git%40*.git',
+59 silly cache add      shortcut: 'github:web-animations/web-animations-js.git%40*',
+59 silly cache add      directUrl: 'https://raw.githubusercontent.com/web-animations/web-animations-js.git%40*/master/package.json' } }
+60 verbose addRemoteGit caching https://github.com/web-animations/web-animations-js.git@*
+61 verbose addRemoteGit git+https://github.com/web-animations/web-animations-js.git%40*.git is a repository hosted by github
+62 silly tryClone cloning git+https://github.com/web-animations/web-animations-js.git%40*.git via git+https://github.com/web-animations/web-animations-js.git%40*.git
+63 verbose tryClone https-github-com-web-animations-web-animations-js-git-40-git-5fd7bc8e not in flight; caching
+64 info git [ 'clone',
+64 info git   '--template=/Users/jamesrauhut/.npm/_git-remotes/_templates',
+64 info git   '--mirror',
+64 info git   'https://github.com/web-animations/web-animations-js.git%40*.git',
+64 info git   '/Users/jamesrauhut/.npm/_git-remotes/https-github-com-web-animations-web-animations-js-git-40-git-5fd7bc8e' ]
+65 error git clone --template=/Users/jamesrauhut/.npm/_git-remotes/_templates --mirror https://github.com/web-animations/web-animations-js.git%40*.git /Users/jamesrauhut/.npm/_git-remotes/https-github-com-web-animations-web-animations-js-git-40-git-5fd7bc8e: Cloning into bare repository '/Users/jamesrauhut/.npm/_git-remotes/https-github-com-web-animations-web-animations-js-git-40-git-5fd7bc8e'...
+65 error git clone --template=/Users/jamesrauhut/.npm/_git-remotes/_templates --mirror https://github.com/web-animations/web-animations-js.git%40*.git /Users/jamesrauhut/.npm/_git-remotes/https-github-com-web-animations-web-animations-js-git-40-git-5fd7bc8e: fatal: unable to access 'https://github.com/web-animations/web-animations-js.git%40*.git/': The requested URL returned error: 400
+66 verbose stack Error: Command failed: git clone --template=/Users/jamesrauhut/.npm/_git-remotes/_templates --mirror https://github.com/web-animations/web-animations-js.git%40*.git /Users/jamesrauhut/.npm/_git-remotes/https-github-com-web-animations-web-animations-js-git-40-git-5fd7bc8e
+66 verbose stack Cloning into bare repository '/Users/jamesrauhut/.npm/_git-remotes/https-github-com-web-animations-web-animations-js-git-40-git-5fd7bc8e'...
+66 verbose stack fatal: unable to access 'https://github.com/web-animations/web-animations-js.git%40*.git/': The requested URL returned error: 400
+66 verbose stack
+66 verbose stack     at ChildProcess.exithandler (child_process.js:751:12)
+66 verbose stack     at ChildProcess.emit (events.js:110:17)
+66 verbose stack     at maybeClose (child_process.js:1015:16)
+66 verbose stack     at Socket.<anonymous> (child_process.js:1183:11)
+66 verbose stack     at Socket.emit (events.js:107:17)
+66 verbose stack     at Pipe.close (net.js:485:12)
+67 verbose cwd /Users/jamesrauhut/seejamescode
+68 error Darwin 14.5.0
+69 error argv "node" "/usr/local/bin/npm" "install"
+70 error node v0.12.5
+71 error npm  v2.11.2
+72 error code 128
+73 error Command failed: git clone --template=/Users/jamesrauhut/.npm/_git-remotes/_templates --mirror https://github.com/web-animations/web-animations-js.git%40*.git /Users/jamesrauhut/.npm/_git-remotes/https-github-com-web-animations-web-animations-js-git-40-git-5fd7bc8e
+73 error Cloning into bare repository '/Users/jamesrauhut/.npm/_git-remotes/https-github-com-web-animations-web-animations-js-git-40-git-5fd7bc8e'...
+73 error fatal: unable to access 'https://github.com/web-animations/web-animations-js.git%40*.git/': The requested URL returned error: 400
+74 error If you need help, you may report this error at:
+74 error     <https://github.com/npm/npm/issues>
+75 verbose exit [ 1, true ]

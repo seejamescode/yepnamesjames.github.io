@@ -12,6 +12,5 @@ var logoAnimation = document.querySelector('.sky__title__logo').animate([
 ], {
     duration: 5000
 }).onfinish = function() {
-  console.log('here');
   sloganAnimation.play();
 };
