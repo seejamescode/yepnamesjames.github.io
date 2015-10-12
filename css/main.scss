@@ -1,9 +1,6 @@
-.body {
-  margin: 0;
-  padding: 0;
-}
-
+$black: #000;
 $blue: #00a7cd;
+$white: #fff;
 
 // Font Sizing
 $scale: 1;
@@ -13,6 +10,12 @@ $h3: #{(1.618em * $scale)};
 $p: #{(1em * $scale)};
 $caption: #{(.618em * $scale)};
 
+.body {
+  background-color: $black;
+  margin: 0;
+  padding: 0;
+}
+
 .sky {
   align-items: center;
   background-color: $blue;
@@ -20,16 +23,28 @@ $caption: #{(.618em * $scale)};
   flex-direction: row;
   height: 100vh;
   justify-content: center;
+  overflow: hidden;
   text-align: center;
 
   .sky__title {
     .sky__title__logo {
       max-height: 50vh;
       max-width: 100%;
+      transform: translateY(100vh);
     }
 
     .sky__title__slogan {
+      color: $white;
       font-size: $h3;
+      opacity: 0;
     }
+  }
+
+  .sky__skyline {
+    bottom: 0;
+    left: 0;
+    min-width: 900px;
+    position: absolute;
+    width: 100%;
   }
 }
