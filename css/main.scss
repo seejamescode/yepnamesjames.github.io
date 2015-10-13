@@ -47,4 +47,11 @@ $caption: #{(.618em * $scale)};
     position: absolute;
     width: 100%;
   }
+
+  .sky__airplane {
+    left: 100%;
+    position: absolute;
+    transform: scale(0.25) translate(0, 0);
+    top: 50%;
+  }
 }
