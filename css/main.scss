@@ -3,7 +3,10 @@ $blue: #00a7cd;
 $white: #fff;
 
 // Font Sizing
-$scale: 1;
+$scale: .75;
+@media (min-width: 720px) {
+  $scale: 1;
+}
 $h1:  #{(4.236em * $scale)};
 $h2: #{(2.618em * $scale)};
 $h3: #{(1.618em * $scale)};
@@ -13,6 +16,7 @@ $caption: #{(.618em * $scale)};
 .body {
   background-color: $black;
   margin: 0;
+  overflow-x: hidden;
   padding: 0;
 }
 
@@ -51,7 +55,28 @@ $caption: #{(.618em * $scale)};
   .sky__airplane {
     left: 100%;
     position: absolute;
-    transform: scale(0.25) translate(0, 0);
     top: 50%;
+    width: 25%;
+  }
+
+  .sky__fighter {
+    right: 100%;
+    position: absolute;
+    top: 10%;
+    width: 15%;
+  }
+
+  .sky__man {
+    left: 100%;
+    position: absolute;
+    top: 80%;
+    width: 10%;
+  }
+
+  .sky__bike {
+    right: 100%;
+    position: absolute;
+    top: 30%;
+    width: 5%;
   }
 }
