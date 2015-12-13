@@ -55,6 +55,14 @@ gulp.task('js', function() {
         .pipe(gulp.dest('production/js'))
 });
 
+gulp.task('js-components', function() {
+    return gulp.src([
+                        'node_modules/web-animations-js/web-animations-next.min.js'
+                    ])
+        .pipe(gulp.dest('static/js'))
+        .pipe(gulp.dest('production/js'))
+});
+
 gulp.task('html', function() {
     var opts = {
         conditionals: true,
@@ -89,7 +97,7 @@ gulp.task('watch', function() {
   gulp.watch('js/*.js', ['js']);
 });
 
-gulp.task('build', ['html', 'images', 'sass', 'js'])
+gulp.task('build', ['html', 'images', 'sass', 'js', 'js-components'])
 gulp.task('default', ['watch', 'build', 'browser-sync']);
 
 

@@ -27,6 +27,7 @@
     "scsslint": "*"
   },
   "dependencies": {
-    "normalize.css": "*"
+    "normalize.css": "*",
+    "web-animations-js": "https://github.com/web-animations/web-animations-js.git"
   }
 }
