@@ -1,5 +1,5 @@
 $black: #000;
-$blue: #00a7cd;
+$blue: #27a9e3;
 $white: #fff;
 
 // Font Sizing
@@ -13,8 +13,9 @@ $h3: #{(1.618em * $scale)};
 $p: #{(1em * $scale)};
 $caption: #{(.618em * $scale)};
 
+$section-padding: 1em;
+
 .body {
-  background-color: $blue;
   color: $white;
   margin: 0;
   overflow-x: hidden;
@@ -26,17 +27,28 @@ $caption: #{(.618em * $scale)};
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 100vh;
+  padding: calc(#{$section-padding} * #{$scale}) 0;
   text-align: center;
-  width: 100vw;
+  width: 100%;
 }
 
 .intro {
+  background: linear-gradient(to bottom, #82addb 0%, #ebb2b1 100%);
+  height: calc(85vh - #{$section-padding} * #{$scale});
+
+  @media (min-height: 480px) {
+    height: calc(100vh - #{$section-padding} / 2 * #{$scale});
+  }
+
   .intro__logo {
-    margin-bottom: 3em;
     max-height: 50vh;
     max-width: 100%;
     width: 50vh;
+
+    @media (min-height: 480px) {
+      margin-bottom: 3em;
+      width: 50vh;
+    }
   }
 
   .intro__slogan {
@@ -45,13 +57,61 @@ $caption: #{(.618em * $scale)};
 }
 
 .about {
-  margin: 0 1em;
+  background: linear-gradient(to bottom, #ebb2b1 0%, #94c5f8 100%);
+  padding: calc(#{$section-padding} * #{$scale}) 1em;
   width: calc(100vw - 2em);
 
-  @media (min-width: 768px) {
-    margin: 0 5em;
+  @media (min-width: 720px) {
+    padding: calc(#{$section-padding} * #{$scale}) 5em;
     width: calc(100vw - 10em);
   }
+}
+
+.skills {
+  background-color: #94c5f8;
+
+  .skills__list {
+    color: $black;
+    list-style: none;
+    padding: 0 5vw;
+    text-align: center;
+    width: 90vw;
+
+    .skills__list__item {
+      border-top: 6px dashed #94c5f8;
+      display: inline-block;
+      margin: 8px 4px;
+      padding: 1em;
+
+      &:nth-child(1n) {
+        background-color: #69d2e7;
+      }
+
+      &:nth-child(2n) {
+        background-color: #f38630;
+      }
+
+      &:nth-child(3n) {
+        background-color: #a7dbd8;
+      }
+
+      &:nth-child(4n) {
+        background-color: #fa6900;
+      }
+
+      &:nth-child(5n) {
+        background-color: #e0e4cc;
+      }
+    }
+  }
+}
+
+.experience {
+  background: linear-gradient(to bottom, #94c5f8 0%, #67d1fb 100%);
+}
+
+.contact {
+  background: linear-gradient(to bottom, #67d1fb 0%, #38a3d1 100%);
 }
 
 .sky {
