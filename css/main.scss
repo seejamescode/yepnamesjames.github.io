@@ -15,18 +15,18 @@ $caption: #{(.618em * $scale)};
 
 .body {
   background-color: $blue;
+  color: $white;
   margin: 0;
   overflow-x: hidden;
   padding: 0;
-  color: $white;
 }
 
 .section {
   align-items: center;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
   justify-content: center;
+  min-height: 100vh;
   text-align: center;
   width: 100vw;
 }
@@ -56,6 +56,7 @@ $caption: #{(.618em * $scale)};
 
 .sky {
   height: 100vh;
+  pointer-events: none;
   position: fixed;
   top: 0;
   width: 100vw;
