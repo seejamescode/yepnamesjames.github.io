@@ -2,6 +2,14 @@ $black: #000;
 $blue: #27a9e3;
 $white: #fff;
 
+// Transitioning Gradient Colors
+$sky1: #82addb;
+$sky2: #ebb2b1;
+$sky3: #94c5f8;
+$sky4: #67d1fb;
+$sky5: #b26339;
+$sky6: #150800;
+
 // Font Sizing
 $scale: .75;
 @media (min-width: 720px) {
@@ -32,8 +40,33 @@ $section-padding: 1em;
   width: 100%;
 }
 
+.transition {
+  height: 10vh;
+  width: 100%;
+
+  &:nth-of-type(1) {
+    background: linear-gradient(to bottom, $sky2 0%, $sky3 100%);
+  }
+
+  &:nth-of-type(2) {
+    background: linear-gradient(to bottom, $sky3 0%, $sky4 100%);
+  }
+
+  &:nth-of-type(3) {
+    background: linear-gradient(to bottom, $sky4 0%, $sky5 100%);
+  }
+
+  &:nth-of-type(4) {
+    background: linear-gradient(to bottom, $sky5 0%, $sky6 100%);
+  }
+
+  &:nth-of-type(5) {
+    background-color: $sky6;
+  }
+}
+
 .intro {
-  background: linear-gradient(to bottom, #82addb 0%, #ebb2b1 100%);
+  background: linear-gradient(to bottom, $sky1 0%, $sky2 100%);
   height: calc(85vh - #{$section-padding} * #{$scale});
 
   @media (min-height: 480px) {
@@ -57,7 +90,7 @@ $section-padding: 1em;
 }
 
 .about {
-  background: linear-gradient(to bottom, #ebb2b1 0%, #94c5f8 100%);
+  background-color: $sky3;
   padding: calc(#{$section-padding} * #{$scale}) 1em;
   width: calc(100vw - 2em);
 
@@ -68,7 +101,7 @@ $section-padding: 1em;
 }
 
 .skills {
-  background-color: #94c5f8;
+  background-color: $sky4;
 
   .skills__list {
     color: $black;
@@ -78,13 +111,13 @@ $section-padding: 1em;
     width: 90vw;
 
     .skills__list__item {
-      border-top: 6px dashed #94c5f8;
+      border-top: 6px dashed $sky4;
       display: inline-block;
       margin: 8px 4px;
       padding: 1em;
 
       &:nth-child(1n) {
-        background-color: #69d2e7;
+        background-color: #FC8098;
       }
 
       &:nth-child(2n) {
@@ -107,11 +140,11 @@ $section-padding: 1em;
 }
 
 .experience {
-  background: linear-gradient(to bottom, #94c5f8 0%, #67d1fb 100%);
+  background-color: $sky5;
 }
 
 .contact {
-  background: linear-gradient(to bottom, #67d1fb 0%, #38a3d1 100%);
+  background-color: $sky6;
 }
 
 .sky {
