@@ -7,8 +7,9 @@ $sky1: #82addb;
 $sky2: #ebb2b1;
 $sky3: #94c5f8;
 $sky4: #67d1fb;
-$sky5: #b26339;
-$sky6: #150800;
+$sky5: #576e71;
+$sky6: #b26339;
+$sky7: #150800;
 
 // Lego Block Colors That Match Sky4
 $block1: #fc8098;
@@ -35,7 +36,7 @@ p { font-size: calc(4.236em * #{$scale-small}); }
 }
 
 .body {
-  color: $black;
+  color: $white;
   margin: 0;
   overflow-x: hidden;
   padding: 0;
@@ -55,6 +56,10 @@ p { font-size: calc(4.236em * #{$scale-small}); }
   height: 10vh;
   width: 100%;
 
+  @media (min-width: 720px) {
+    height: 25vh;
+  }
+
   &:nth-of-type(1) {
     background: linear-gradient(to bottom, $sky2 0%, $sky3 100%);
   }
@@ -72,7 +77,11 @@ p { font-size: calc(4.236em * #{$scale-small}); }
   }
 
   &:nth-of-type(5) {
-    background-color: $sky6;
+    background: linear-gradient(to bottom, $sky6 0%, $sky7 100%);
+  }
+
+  &:nth-of-type(6) {
+    background-color: $sky7;
   }
 }
 
@@ -81,7 +90,7 @@ p { font-size: calc(4.236em * #{$scale-small}); }
   height: calc(85vh - #{$section-padding});
 
   @media (min-height: 480px) {
-    height: calc(100vh - #{$section-padding} / 2);
+    height: 90vh;
   }
 
   .intro__logo {
@@ -146,13 +155,18 @@ p { font-size: calc(4.236em * #{$scale-small}); }
   }
 }
 
-.experience {
+.projects {
   background-color: $sky5;
   color: $white;
 }
 
-.contact {
+.experience {
   background-color: $sky6;
+  color: $white;
+}
+
+.contact {
+  background-color: $sky7;
   color: $white;
 }
 
