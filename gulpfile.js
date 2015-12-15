@@ -56,7 +56,7 @@ gulp.task('js', function() {
 
 gulp.task('js-components', function() {
     return gulp.src([
-                        'node_modules/web-animations-js/web-animations-next.min.js'
+                        'node_modules/web-animations-js/web-animations-next.js'
                     ])
         .pipe(gulp.dest('static/js'))
         .pipe(gulp.dest('production/js'))
