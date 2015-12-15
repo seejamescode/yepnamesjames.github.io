@@ -10,21 +10,32 @@ $sky4: #67d1fb;
 $sky5: #b26339;
 $sky6: #150800;
 
-// Font Sizing
-$scale: .75;
-@media (min-width: 720px) {
-  $scale: 1;
-}
-$h1:  #{(4.236em * $scale)};
-$h2: #{(2.618em * $scale)};
-$h3: #{(1.618em * $scale)};
-$p: #{(1em * $scale)};
-$caption: #{(.618em * $scale)};
+// Lego Block Colors That Match Sky4
+$block1: #fc8098;
+$block2: #f38630;
+$block3: #a7dbd8;
+$block4: #fa6900;
+$block5: #e0e4cc;
 
+// Font Sizing
+$scale-small: .25;
+$scale-large: 1.5;
 $section-padding: 1em;
 
+h1 { font-size: calc(4.236em * #{$scale-small}); }
+h2 { font-size: calc(4.236em * #{$scale-small}); }
+h3 { font-size: calc(4.236em * #{$scale-small}); }
+p { font-size: calc(4.236em * #{$scale-small}); }
+
+@media (min-width: 720px) {
+  h1 { font-size: calc(4.236em * #{$scale-large}); }
+  h2 { font-size: calc(2.618em * #{$scale-large}); }
+  h3 { font-size: calc(1.618em * #{$scale-large}); }
+  p { font-size: calc(1em * #{$scale-large}); }
+}
+
 .body {
-  color: $white;
+  color: $black;
   margin: 0;
   overflow-x: hidden;
   padding: 0;
@@ -35,7 +46,7 @@ $section-padding: 1em;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: calc(#{$section-padding} * #{$scale}) 0;
+  padding: $section-padding 0;
   text-align: center;
   width: 100%;
 }
@@ -67,10 +78,10 @@ $section-padding: 1em;
 
 .intro {
   background: linear-gradient(to bottom, $sky1 0%, $sky2 100%);
-  height: calc(85vh - #{$section-padding} * #{$scale});
+  height: calc(85vh - #{$section-padding});
 
   @media (min-height: 480px) {
-    height: calc(100vh - #{$section-padding} / 2 * #{$scale});
+    height: calc(100vh - #{$section-padding} / 2);
   }
 
   .intro__logo {
@@ -83,19 +94,15 @@ $section-padding: 1em;
       width: 50vh;
     }
   }
-
-  .intro__slogan {
-    font-size: $h3;
-  }
 }
 
 .about {
   background-color: $sky3;
-  padding: calc(#{$section-padding} * #{$scale}) 1em;
+  padding: $section-padding 1em;
   width: calc(100vw - 2em);
 
   @media (min-width: 720px) {
-    padding: calc(#{$section-padding} * #{$scale}) 5em;
+    padding: $section-padding 5em;
     width: calc(100vw - 10em);
   }
 }
@@ -117,23 +124,23 @@ $section-padding: 1em;
       padding: 1em;
 
       &:nth-child(1n) {
-        background-color: #FC8098;
+        background-color: $block1;
       }
 
       &:nth-child(2n) {
-        background-color: #f38630;
+        background-color: $block2;
       }
 
       &:nth-child(3n) {
-        background-color: #a7dbd8;
+        background-color: $block3;
       }
 
       &:nth-child(4n) {
-        background-color: #fa6900;
+        background-color: $block4;
       }
 
       &:nth-child(5n) {
-        background-color: #e0e4cc;
+        background-color: $block5;
       }
     }
   }
@@ -141,10 +148,12 @@ $section-padding: 1em;
 
 .experience {
   background-color: $sky5;
+  color: $white;
 }
 
 .contact {
   background-color: $sky6;
+  color: $white;
 }
 
 .sky {
