@@ -1,0 +1,32 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" viewBox="0 0 810 810" style="enable-background:new 0 0 810 810;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFB848;stroke:#FFFFFF;stroke-width:5;stroke-miterlimit:10;}
+	.st1{enable-background:new    ;}
+	.st2{fill:#FFFFFF;}
+	.st3{font-family:'OpenSans';}
+	.st4{font-size:67px;}
+	.shine__part, .shine{transform-origin: 50% 50%;}
+</style>
+<circle class="st0" cx="405" cy="405" r="200"/>
+<text transform="matrix(1 0 0 1 283.9779 387.3967)" class="st1"><tspan x="0" y="0" class="st2 st3 st4">James Y</tspan><tspan x="8.1" y="80.4" class="st2 st3 st4">Rauhut</tspan></text>
+<g class="shine">
+	<polygon class="st0 shine__part" points="378.8,158.6 404.2,15.1 430.1,158.5 	"/>
+	<polygon class="st0 shine__part" points="212.2,249.3 128.7,129.8 248.4,212.9 	"/>
+	<polygon class="st0 shine__part" points="158.5,431.2 15,405.8 158.4,379.9 	"/>
+	<polygon class="st0 shine__part" points="249.2,597.8 129.8,681.3 212.8,561.6 	"/>
+	<polygon class="st0 shine__part" points="431.1,651.5 405.7,795 379.8,651.6 	"/>
+	<polygon class="st0 shine__part" points="597.7,560.8 681.2,680.2 561.6,597.2 	"/>
+	<polygon class="st0 shine__part" points="651.4,378.9 794.9,404.3 651.5,430.2 	"/>
+	<polygon class="st0 shine__part" points="560.7,212.3 680.2,128.8 597.1,248.4 	"/>
+</g>
+	<script>
+		var shineAnimation = document.querySelector('.shine').animate([
+		    {transform: 'rotate(0deg)'},
+		    {transform: 'rotate(360deg)'}
+		], {
+		    duration: 20000,
+		    iterations: Infinity
+		});
+	</script>
+</svg>

@@ -5,7 +5,6 @@ var autoprefixer = require('gulp-autoprefixer');
 var browserSync = require('browser-sync');
 var del = require('del');
 var minifyCSS = require('gulp-minify-css');
-var minifyHTML = require('gulp-minify-html');
 var rename = require('gulp-rename');
 var replace = require('gulp-replace');
 var sass = require('gulp-sass');
@@ -74,7 +73,6 @@ gulp.task('html', function() {
         .pipe(gulp.dest('static'))
         .pipe(replace('.css', '.min.css'))
         .pipe(replace('.js', '.min.js'))
-        .pipe(minifyHTML(opts))
         .pipe(gulp.dest('production'))
 });
 
