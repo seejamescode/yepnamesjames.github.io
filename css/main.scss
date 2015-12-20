@@ -7,9 +7,8 @@ $sky1: #82addb;
 $sky2: #ebb2b1;
 $sky3: #94c5f8;
 $sky4: #67d1fb;
-$sky5: #576e71;
-$sky6: #b26339;
-$sky7: #150800;
+$sky5: #bf5700;
+$sky6: #150800;
 
 // Lego Block Colors That Match Sky4
 $block1: #fc8098;
@@ -19,24 +18,28 @@ $block4: #fa6900;
 $block5: #e0e4cc;
 
 // Font Sizing
-$scale-small: .25;
-$scale-large: 1.5;
+$scale-small: 1;
+$scale-large: 1;
 $section-padding: 1em;
 
-h1 { font-size: calc(4.236em * #{$scale-small}); }
-h2 { font-size: calc(4.236em * #{$scale-small}); }
-h3 { font-size: calc(4.236em * #{$scale-small}); }
-p { font-size: calc(4.236em * #{$scale-small}); }
+h1 { font-size: calc(1.953rem * #{$scale-small}); }
+h2 { font-size: calc(1.563rem * #{$scale-small}); }
+h3 { font-size: calc(1.25rem * #{$scale-small}); }
+p,
+.body { font-size: calc(1rem * #{$scale-small}); }
 
 @media (min-width: 720px) {
-  h1 { font-size: calc(4.236em * #{$scale-large}); }
-  h2 { font-size: calc(2.618em * #{$scale-large}); }
-  h3 { font-size: calc(1.618em * #{$scale-large}); }
-  p { font-size: calc(1em * #{$scale-large}); }
+  h1 { font-size: calc(4.236rem * #{$scale-large}); }
+  h2 { font-size: calc(2.618rem * #{$scale-large}); }
+  h3 { font-size: calc(1.618rem * #{$scale-large}); }
+  p,
+  .body { font-size: calc(1rem * #{$scale-large}); }
 }
 
 .body {
   color: $white;
+  font-family: 'OpenSans';
+  font-weight: 300;
   margin: 0;
   overflow-x: hidden;
   padding: 0;
@@ -77,11 +80,7 @@ p { font-size: calc(4.236em * #{$scale-small}); }
   }
 
   &:nth-of-type(5) {
-    background: linear-gradient(to bottom, $sky6 0%, $sky7 100%);
-  }
-
-  &:nth-of-type(6) {
-    background-color: $sky7;
+    background-color: $sky6;
   }
 }
 
@@ -110,63 +109,113 @@ p { font-size: calc(4.236em * #{$scale-small}); }
   padding: $section-padding 1em;
   width: calc(100vw - 2em);
 
-  @media (min-width: 720px) {
-    padding: $section-padding 5em;
-    width: calc(100vw - 10em);
+  .about__intro {
+    line-height: 1.75rem;
   }
-}
 
-.skills {
-  background-color: $sky4;
-
-  .skills__list {
+  .about__skills {
     color: $black;
     list-style: none;
     padding: 0 5vw;
     text-align: center;
-    width: 90vw;
+  }
 
-    .skills__list__item {
-      border-top: 6px dashed $sky4;
-      display: inline-block;
-      margin: 8px 4px;
-      padding: 1em;
+  @media (min-width: 720px) {
+    display: flex;
+    flex-direction: row;
+    padding: $section-padding 5em;
+    width: calc(100vw - 10em);
 
-      &:nth-child(1n) {
-        background-color: $block1;
-      }
+    .about__intro {
+      width: 50%;
+    }
 
-      &:nth-child(2n) {
-        background-color: $block2;
-      }
-
-      &:nth-child(3n) {
-        background-color: $block3;
-      }
-
-      &:nth-child(4n) {
-        background-color: $block4;
-      }
-
-      &:nth-child(5n) {
-        background-color: $block5;
-      }
+    .about__skills {
+      width: 50%;
     }
   }
 }
 
+.skill {
+  border-top: 6px dashed $sky3;
+  display: inline-block;
+  margin: 4px;
+  padding: .6em 1em;
+
+  @media (min-width: 720px) {
+    margin: 8px 4px;
+    padding: 1em;
+  }
+
+  &:nth-child(1n) {
+    background-color: $block1;
+  }
+
+  &:nth-child(2n) {
+    background-color: $block2;
+  }
+
+  &:nth-child(3n) {
+    background-color: $block3;
+  }
+
+  &:nth-child(4n) {
+    background-color: $block4;
+  }
+
+  &:nth-child(5n) {
+    background-color: $block5;
+  }
+}
+
 .projects {
+  background-color: $sky4;
+  color: $white;
+
+  .projects__list {
+    align-content: flex-end;
+    align-items: center;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+  }
+}
+
+.project {
+  color: $black;
+  margin: 1em;
+  padding: 1em;
+  text-align: left;
+  width: 100%;
+
+  .project__img {
+    width: 100%;
+  }
+
+  .project__title {
+    font-weight: 300;
+  }
+
+  @media (min-width: 480px) {
+    margin: 1em;
+    width: calc(50% - 4em);
+  }
+
+  @media (min-width: 720px) {
+    margin: 2em;
+    width: calc(33.33% - 6em);
+  }
+}
+
+.experience {
   background-color: $sky5;
   color: $white;
 }
 
-.experience {
-  background-color: $sky6;
-  color: $white;
-}
-
 .contact {
-  background-color: $sky7;
+  background-color: $sky6;
   color: $white;
 }
 

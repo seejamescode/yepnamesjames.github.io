@@ -56,7 +56,7 @@ gulp.task('js', function() {
 
 gulp.task('js-components', function() {
     return gulp.src([
-                        'node_modules/web-animations-js/web-animations-next.js'
+                        'node_modules/web-animations-js/web-animations-next.min.js'
                     ])
         .pipe(gulp.dest('static/js'))
         .pipe(gulp.dest('production/js'))
@@ -72,7 +72,7 @@ gulp.task('html', function() {
     return gulp.src(['html/*.html'])
         .pipe(gulp.dest('static'))
         .pipe(replace('.css', '.min.css'))
-        .pipe(replace('.js', '.min.js'))
+        .pipe(replace('sky.js', 'sky.min.js'))
         .pipe(gulp.dest('production'))
 });
 
