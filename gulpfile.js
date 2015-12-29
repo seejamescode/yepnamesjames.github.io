@@ -73,14 +73,15 @@ gulp.task('html', function() {
         .pipe(gulp.dest('static'))
         .pipe(replace('.css', '.min.css'))
         .pipe(replace('sky.js', 'sky.min.js'))
-        .pipe(gulp.dest('production'))
+        .pipe(replace('./', './production/'))
+        .pipe(gulp.dest('./'))
 });
 
 gulp.task('browser-sync', function() {
     browserSync.init(['**/css/*', '**/js/*', '**/html/*', '**/images/*'], {
         server: {
             host: "local.dev",
-            baseDir: "./static/"
+            baseDir: "./"
         },
         open: true,
         ghostMode: false
