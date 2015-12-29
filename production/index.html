@@ -4,43 +4,32 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<title>James Y Rauhut</title>
-		<link rel="stylesheet" type="text/css" href="./css/normalize.min.css">
-		<link rel="stylesheet" type="text/css" href="./css/main.min.css">
-		<script src="js/web-animations-next.min.js"></script>
 	</head>
 	<body class="body">
 		<section class="section intro">
-			<svg class="intro__logo" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 810 810" style="enable-background:new 0 0 810 810;" xml:space="preserve">
-				<style type="text/css">
-					.st0{fill:#FFB848;stroke:#FFFFFF;stroke-width:5;stroke-miterlimit:10;}
-					.st1{enable-background:new;}
-					.st2{fill:#FFFFFF;}
-					.st3{font-family:'OpenSans';}
-					.st4{font-size:67px;}
-					.shine{transform-origin: 410px 410px;}
-				</style>
-				<circle class="st0" cx="405" cy="405" r="200"/>
-				<text transform="matrix(1 0 0 1 283.9779 387.3967)" class="st1"><tspan x="0" y="0" class="st2 st3 st4">James Y</tspan><tspan x="8.1" y="80.4" class="st2 st3 st4">Rauhut</tspan></text>
-				<g class="shine" transform="translate(-410, -410)">
-					<polygon class="st0 shine__part" points="378.8,158.6 404.2,15.1 430.1,158.5 	"/>
-					<polygon class="st0 shine__part" points="212.2,249.3 128.7,129.8 248.4,212.9 	"/>
-					<polygon class="st0 shine__part" points="158.5,431.2 15,405.8 158.4,379.9 	"/>
-					<polygon class="st0 shine__part" points="249.2,597.8 129.8,681.3 212.8,561.6 	"/>
-					<polygon class="st0 shine__part" points="431.1,651.5 405.7,795 379.8,651.6 	"/>
-					<polygon class="st0 shine__part" points="597.7,560.8 681.2,680.2 561.6,597.2 	"/>
-					<polygon class="st0 shine__part" points="651.4,378.9 794.9,404.3 651.5,430.2 	"/>
-					<polygon class="st0 shine__part" points="560.7,212.3 680.2,128.8 597.1,248.4 	">
-				</g>
-				<script>
-					var shineAnimation = document.querySelector('.shine').animate([
-					    {transform: 'rotate(0deg)'},
-					    {transform: 'rotate(360deg)'}
-					], {
-					    duration: 20000,
-					    iterations: Infinity
-					});
-				</script>
-			</svg>
+      <div class="intro__sun">
+  			<svg class="intro__logo" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 810 810" style="enable-background:new 0 0 810 810;" xml:space="preserve">
+  				<style type="text/css">
+  					.st0{fill:#FFB848;stroke:#FFFFFF;stroke-width:5;stroke-miterlimit:10;}
+  					.st1{enable-background:new;}
+  					.st2{fill:#FFFFFF;}
+  				</style>
+  				<circle class="st0" cx="405" cy="405" r="200"/>
+  				<g>
+  					<polygon class="st0 shine__part" points="378.8,158.6 404.2,15.1 430.1,158.5 	"/>
+  					<polygon class="st0 shine__part" points="212.2,249.3 128.7,129.8 248.4,212.9 	"/>
+  					<polygon class="st0 shine__part" points="158.5,431.2 15,405.8 158.4,379.9 	"/>
+  					<polygon class="st0 shine__part" points="249.2,597.8 129.8,681.3 212.8,561.6 	"/>
+  					<polygon class="st0 shine__part" points="431.1,651.5 405.7,795 379.8,651.6 	"/>
+  					<polygon class="st0 shine__part" points="597.7,560.8 681.2,680.2 561.6,597.2 	"/>
+  					<polygon class="st0 shine__part" points="651.4,378.9 794.9,404.3 651.5,430.2 	"/>
+  					<polygon class="st0 shine__part" points="560.7,212.3 680.2,128.8 597.1,248.4 	"/>
+  				</g>
+  			</svg>
+        <div class="intro__title">
+          <h1>James Y<br>Rauhut</h1>
+        </div>
+      </div>
 			<h3 class="intro__slogan">
 				Designing a brighter web.
 			</h3>
@@ -76,68 +65,200 @@
     <section class="section projects">
       <ul class="projects__list">
         <li class="project">
-          <img class='project__img' src='http://seejamescode.com/img/projects/BrazosPortalTour.jpg'>
-          <p class='project__title'>
-            Brazos Portal
-          </p>
-          <p class='project__p'>
-            Brazos Portal is a new BPM web app that utilizes AngularJS and Node.js. I helped develop the product while also making a demo version that adds a guided tour, responsiveness demonstration, and other features. On this project, I practiced an agile workflow and GitHub collaboration.
-          </p>
+          <img class='project__cloud' src="./images/cloud1.svg">
+          <div class="project__swing">
+            <div class="project__card">
+              <div class="project__front" onclick="toggleClass(this, 'project__card flipped')">
+                <h3 class='project__title'>
+                  Component Library
+                </h3>
+                <p class='project__p'>
+                  React.js
+                </p>
+              </div>
+              <div class="project__back" onclick="toggleClass(this, 'project__card')">
+                <p class='project__p'>
+                  Similar to React-Bootstrap, but fitting the design guide for IBM Analytics Platform.
+                </p>
+                <div class="project__links">
+                  <a class="project__icon">
+                    <p class="caption">
+                      Sorry, all code is private.
+                    </p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </li>
         <li class="project">
-          <img class='project__img' src='http://seejamescode.com/img/projects/BrazosPortalTour.jpg'>
-          <p class='project__title'>
-            Brazos Portal
-          </p>
-          <p class='project__p'>
-            Brazos Portal is a new BPM web app that utilizes AngularJS and Node.js. I helped develop the product while also making a demo version that adds a guided tour, responsiveness demonstration, and other features. On this project, I practiced an agile workflow and GitHub collaboration.
-          </p>
+          <img class='project__cloud' src="./images/cloud1.svg">
+          <div class="project__swing">
+            <div class="project__card">
+              <a class="project__front" onclick="toggleClass(this, 'project__card flipped')">
+                <h3 class='project__title'>
+                  Animation Tutorial
+                </h3>
+                <p class='project__p'>
+                  Web Animations API
+                </p>
+              </a>
+              <div class="project__back"  onclick="toggleClass(this, 'project__card')">
+                <p class='project__p'>
+                  An intro I wrote for the Web Animations API.
+                </p>
+                <div class="project__links">
+                  <a class="caption project__icon" href="https://github.com/yepnamesjames/web-animations-intro" target="_blank">
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 120 120" style="enable-background:new 0 0 120 120;" xml:space="preserve" class="project__icon--svg">
+                      <style type="text/css">
+                        .github{fill:#191717;}
+                      </style>
+                      <path class="github" d="M60,2C27.1,2,0.5,28.6,0.5,61.5c0,26.3,17,48.6,40.7,56.5c3,0.5,4.1-1.3,4.1-2.9c0-1.4-0.1-5.2-0.1-10.1 c-16.6,3.6-20-8-20-8c-2.7-6.9-6.6-8.7-6.6-8.7c-5.4-3.7,0.4-3.6,0.4-3.6c6,0.4,9.1,6.1,9.1,6.1c5.3,9.1,13.9,6.5,17.3,4.9 c0.5-3.8,2.1-6.5,3.8-8C35.9,86.3,22,81.2,22,58.4c0-6.5,2.3-11.8,6.1-16c-0.6-1.5-2.7-7.6,0.6-15.7c0,0,5-1.6,16.4,6.1 c4.7-1.3,9.8-2,14.9-2c5.1,0,10.1,0.7,14.9,2c11.4-7.7,16.3-6.1,16.3-6.1c3.2,8.2,1.2,14.2,0.6,15.7c3.8,4.2,6.1,9.5,6.1,16 C98,81.2,84,86.2,70.8,87.7c2.1,1.8,4,5.5,4,11c0,8-0.1,14.4-0.1,16.3c0,1.6,1.1,3.4,4.1,2.9c23.6-7.9,40.7-30.2,40.7-56.4 C119.5,28.6,92.9,2,60,2z"/>
+                    </svg>
+                    <p class="caption">
+                      Code
+                    </p>
+                  </a>
+                  <a class="caption project__icon" href="https://yepnamesjames.github.io/web-animations-intro/" target="_blank">
+                    <svg version="1.1" id="Forma_1_1_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 120 120" style="enable-background:new 0 0 120 120;" xml:space="preserve" class="project__icon--svg">
+                      <path d="M119.3,60.4c-10.4-22.3-33-37.8-59.3-37.8c-26.2,0-48.9,15.5-59.3,37.8c-0.3,0.7-0.3,1.5,0,2.2 c10.4,22.3,33,37.8,59.3,37.8c26.2,0,48.9-15.5,59.3-37.8C119.6,61.9,119.6,61.1,119.3,60.4z M60,88.3c-14.8,0-26.8-12-26.8-26.8 c0-14.8,12-26.8,26.8-26.8c14.8,0,26.8,12,26.8,26.8S74.8,88.3,60,88.3z M60,44.3c-9.5,0-17.2,7.7-17.2,17.2 c0,9.5,7.7,17.2,17.2,17.2S77.2,71,77.2,61.5C77.2,52,69.5,44.3,60,44.3z"/>
+                    </svg>
+                    <p class="caption">
+                      View
+                    </p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </li>
         <li class="project">
-          <img class='project__img' src='http://seejamescode.com/img/projects/BrazosPortalTour.jpg'>
-          <p class='project__title'>
-            Brazos Portal
-          </p>
-          <p class='project__p'>
-            Brazos Portal is a new BPM web app that utilizes AngularJS and Node.js. I helped develop the product while also making a demo version that adds a guided tour, responsiveness demonstration, and other features. On this project, I practiced an agile workflow and GitHub collaboration.
-          </p>
+          <img class='project__cloud' src="./images/cloud1.svg">
+          <div class="project__swing">
+            <div class="project__card">
+              <div class="project__front" onclick="toggleClass(this, 'project__card flipped')">
+                <h3 class='project__title'>
+                  QuoteReact
+                </h3>
+                <p class='project__p'>
+                  APIs
+                </p>
+              </div>
+              <div class="project__back" onclick="toggleClass(this, 'project__card')">
+                <p class='project__p'>
+                  A silly app to practice receiving multiple API calls.
+                </p>
+                <div class="project__links">
+                  <a class="caption project__icon" href="https://github.com/yepnamesjames/QuoteReact/" target="_blank">
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 120 120" style="enable-background:new 0 0 120 120;" xml:space="preserve" class="project__icon--svg">
+                      <style type="text/css">
+                        .github{fill:#191717;}
+                      </style>
+                      <path class="github" d="M60,2C27.1,2,0.5,28.6,0.5,61.5c0,26.3,17,48.6,40.7,56.5c3,0.5,4.1-1.3,4.1-2.9c0-1.4-0.1-5.2-0.1-10.1 c-16.6,3.6-20-8-20-8c-2.7-6.9-6.6-8.7-6.6-8.7c-5.4-3.7,0.4-3.6,0.4-3.6c6,0.4,9.1,6.1,9.1,6.1c5.3,9.1,13.9,6.5,17.3,4.9 c0.5-3.8,2.1-6.5,3.8-8C35.9,86.3,22,81.2,22,58.4c0-6.5,2.3-11.8,6.1-16c-0.6-1.5-2.7-7.6,0.6-15.7c0,0,5-1.6,16.4,6.1 c4.7-1.3,9.8-2,14.9-2c5.1,0,10.1,0.7,14.9,2c11.4-7.7,16.3-6.1,16.3-6.1c3.2,8.2,1.2,14.2,0.6,15.7c3.8,4.2,6.1,9.5,6.1,16 C98,81.2,84,86.2,70.8,87.7c2.1,1.8,4,5.5,4,11c0,8-0.1,14.4-0.1,16.3c0,1.6,1.1,3.4,4.1,2.9c23.6-7.9,40.7-30.2,40.7-56.4 C119.5,28.6,92.9,2,60,2z"/>
+                    </svg>
+                    <p class="caption">
+                      Code
+                    </p>
+                  </a>
+                  <a class="caption project__icon" href="https://yepnamesjames.github.io/QuoteReact/" target="_blank">
+                    <svg version="1.1" id="Forma_1_1_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 120 120" style="enable-background:new 0 0 120 120;" xml:space="preserve" class="project__icon--svg">
+                      <path d="M119.3,60.4c-10.4-22.3-33-37.8-59.3-37.8c-26.2,0-48.9,15.5-59.3,37.8c-0.3,0.7-0.3,1.5,0,2.2 c10.4,22.3,33,37.8,59.3,37.8c26.2,0,48.9-15.5,59.3-37.8C119.6,61.9,119.6,61.1,119.3,60.4z M60,88.3c-14.8,0-26.8-12-26.8-26.8 c0-14.8,12-26.8,26.8-26.8c14.8,0,26.8,12,26.8,26.8S74.8,88.3,60,88.3z M60,44.3c-9.5,0-17.2,7.7-17.2,17.2 c0,9.5,7.7,17.2,17.2,17.2S77.2,71,77.2,61.5C77.2,52,69.5,44.3,60,44.3z"/>
+                    </svg>
+                    <p class="caption">
+                      View
+                    </p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </li>
         <li class="project">
-          <img class='project__img' src='http://seejamescode.com/img/projects/BrazosPortalTour.jpg'>
-          <p class='project__title'>
-            Brazos Portal
-          </p>
-          <p class='project__p'>
-            Brazos Portal is a new BPM web app that utilizes AngularJS and Node.js. I helped develop the product while also making a demo version that adds a guided tour, responsiveness demonstration, and other features. On this project, I practiced an agile workflow and GitHub collaboration.
-          </p>
+          <img class='project__cloud' src="./images/cloud1.svg">
+          <div class="project__swing">
+            <div class="project__card">
+              <div class="project__front" onclick="toggleClass(this, 'project__card flipped')">
+                <h3 class='project__title'>
+                  Brazos Portal Tour
+                </h3>
+                <p class='project__p'>
+                  AngularJS
+                </p>
+              </div>
+              <div class="project__back" onclick="toggleClass(this, 'project__card')">
+                <p class='project__p'>
+                  Worked on the living product's onboarding and a node demo.
+                </p>
+                <div class="project__links">
+                  <a class="caption project__icon" href="http://brazos-portal.bp-3cloud.com/?signup=true#" target="_blank">
+                    <svg version="1.1" id="Forma_1_1_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 120 120" style="enable-background:new 0 0 120 120;" xml:space="preserve" class="project__icon--svg">
+                      <path d="M119.3,60.4c-10.4-22.3-33-37.8-59.3-37.8c-26.2,0-48.9,15.5-59.3,37.8c-0.3,0.7-0.3,1.5,0,2.2 c10.4,22.3,33,37.8,59.3,37.8c26.2,0,48.9-15.5,59.3-37.8C119.6,61.9,119.6,61.1,119.3,60.4z M60,88.3c-14.8,0-26.8-12-26.8-26.8 c0-14.8,12-26.8,26.8-26.8c14.8,0,26.8,12,26.8,26.8S74.8,88.3,60,88.3z M60,44.3c-9.5,0-17.2,7.7-17.2,17.2 c0,9.5,7.7,17.2,17.2,17.2S77.2,71,77.2,61.5C77.2,52,69.5,44.3,60,44.3z"/>
+                    </svg>
+                    <p class="caption">
+                      View
+                    </p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </li>
         <li class="project">
-          <img class='project__img' src='http://seejamescode.com/img/projects/BrazosPortalTour.jpg'>
-          <p class='project__title'>
-            Brazos Portal
-          </p>
-          <p class='project__p'>
-            Brazos Portal is a new BPM web app that utilizes AngularJS and Node.js. I helped develop the product while also making a demo version that adds a guided tour, responsiveness demonstration, and other features. On this project, I practiced an agile workflow and GitHub collaboration.
-          </p>
+          <img class='project__cloud' src="./images/cloud1.svg">
+          <div class="project__swing">
+            <div class="project__card">
+              <div class="project__front" onclick="toggleClass(this, 'project__card flipped')">
+                <h3 class='project__title'>
+                  Pizza Party Planner
+                </h3>
+                <p class='project__p'>
+                  AngularJS
+                </p>
+              </div>
+              <div class="project__back" onclick="toggleClass(this, 'project__card')">
+                <p class='project__p'>
+                  My first venture into AngularJS to help your pizza party planning needs.
+                </p>
+              </div>
+            </div>
+          </div>
         </li>
       </ul>
     </section>
-    <div class="transition">
-    </div>
-    <section class="section experience">
-    	<p>
-				My name is James, and I am a web designer in Austin, Texas. With a business degree in MIS and a certificate in digital media studies, I like to give a new perspective on web development. I have a strong passion for user experience and would love to connect with anybody that has questions or similar interests.
-			</p>
-    </section>
-    <div class="transition">
-    </div>
     <section class="section contact">
-    	<p>
-				My name is James, and I am a web designer in Austin, Texas. With a business degree in MIS and a certificate in digital media studies, I like to give a new perspective on web development. I have a strong passion for user experience and would love to connect with anybody that has questions or similar interests.
-			</p>
+    	<div class="contact__stars"></div>
+      <div class="contact__twinkling"></div>
+      <h2>Have an opportunity or just want to connect? I would love to get in touch.</h2>
+      <div id="outer-shell">
+        <div id="contact-options">
+          <ul>
+            <li>
+              <a href="mailto:james@seejamescode.com" id="top-link" title="james@seejamescode.com">
+                mailto:james@seejamescode.com
+              </a>
+            </li>
+            <li>
+              <a href="http://www.twitter.com/seejamescode" id="top-link" title="@seejamescode">
+                @seejamescode
+              </a>
+            </li>
+            <li>
+              <a href="http://www.linkedin.com/in/jamesrauhut/" id="top-link" title="LinkedIn" target="blank">
+                linkedin.com/in/jamesrauhut
+              </a>
+            </li>
+            <li>
+              <a href="JamesYRauhutResume.pdf" id="top-link" title="Download Resume" target="blank">
+                PDF Resume
+              </a>
+            </li>
+          </ul>
+          <h2 class="tweetHead">Latest Tweet</h2>
+          <div id="twitterFeed"></div>
+        </div>
+      </div>
+      <h4>&copy; 2014, 2015 James Y Rauhut. All rights reserved.</h4>
     </section>
-    <div class="transition">
-    </div>
 		<section class="sky">
 			<img class="sky__skyline" src="./images/austin-skyline.png">
 			<img class="sky__airplane" src="./images/airplane.png">
@@ -147,6 +268,9 @@
 			<img class="sky__glider" src="./images/glider.png">
 			<img class="sky__balloon" src="./images/balloon.png">
 		</section>
-		<script src="js/sky.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/normalize.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/main.min.css">
+    <script async src="js/web-animations-next.min.js"></script>
+		<script async src="js/sky.min.js"></script>
 	</body>
 </html>

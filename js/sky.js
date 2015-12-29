@@ -1,3 +1,7 @@
+function toggleClass(el, className) {
+    el.parentNode.className = className;
+}
+
 var skyEffects = [
     new KeyframeEffect(
         document.querySelector('.sky__airplane'),

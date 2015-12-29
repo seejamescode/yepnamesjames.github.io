@@ -3,7 +3,8 @@ $blue: #27a9e3;
 $white: #fff;
 
 // Transitioning Gradient Colors
-$sky1: #82addb;
+$sky0: #4a4969;
+$sky1: #7072ab;
 $sky2: #ebb2b1;
 $sky3: #94c5f8;
 $sky4: #67d1fb;
@@ -20,7 +21,7 @@ $block5: #e0e4cc;
 // Font Sizing
 $scale-small: 1;
 $scale-large: 1;
-$section-padding: 1em;
+$section-padding: 0 1em;
 
 h1 { font-size: calc(1.953rem * #{$scale-small}); }
 h2 { font-size: calc(1.563rem * #{$scale-small}); }
@@ -28,16 +29,25 @@ h3 { font-size: calc(1.25rem * #{$scale-small}); }
 p,
 .body { font-size: calc(1rem * #{$scale-small}); }
 
+.caption { font-size: calc(.875rem * #{$scale-small}); }
+
 @media (min-width: 720px) {
   h1 { font-size: calc(4.236rem * #{$scale-large}); }
   h2 { font-size: calc(2.618rem * #{$scale-large}); }
   h3 { font-size: calc(1.618rem * #{$scale-large}); }
   p,
   .body { font-size: calc(1rem * #{$scale-large}); }
+
+  .caption { font-size: calc(.875rem * #{$scale-small}); }
+}
+
+html,
+.body {
+  height: 100%;
 }
 
 .body {
-  color: $white;
+  color: $black;
   font-family: 'OpenSans';
   font-weight: 300;
   margin: 0;
@@ -52,11 +62,11 @@ p,
   justify-content: center;
   padding: $section-padding 0;
   text-align: center;
-  width: 100%;
+  width: calc(100% - 2em);
 }
 
 .transition {
-  height: 10vh;
+  height: 25vh;
   width: 100%;
 
   @media (min-width: 720px) {
@@ -76,37 +86,60 @@ p,
   }
 
   &:nth-of-type(4) {
-    background: linear-gradient(to bottom, $sky5 0%, $sky6 100%);
-  }
-
-  &:nth-of-type(5) {
     background-color: $sky6;
   }
 }
 
 .intro {
-  background: linear-gradient(to bottom, $sky1 0%, $sky2 100%);
+  background: linear-gradient(to bottom, $sky0 0%, $sky1 50%, $sky2 100%);
   height: calc(85vh - #{$section-padding});
 
   @media (min-height: 480px) {
     height: 90vh;
   }
 
-  .intro__logo {
-    max-height: 50vh;
-    max-width: 100%;
+  .intro__sun {
+    align-items: center;
+    display: flex;
+    height: 50vh;
+    justify-content: center;
+    max-height: 90vh;
+    max-width: 90vw;
+    position: relative;
     width: 50vh;
+  }
 
-    @media (min-height: 480px) {
-      margin-bottom: 3em;
-      width: 50vh;
+  .intro__logo {
+    animation: rotation 20s infinite linear;
+    width: 100%;
+    z-index: 0;
+
+    @keyframes rotation {
+      from {transform: rotate(0deg);}
+      to {transform: rotate(360deg);}
+    }
+  }
+
+  .intro__title {
+    align-items: center;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+
+    h1 {
+      font-size: 3vw;
     }
   }
 }
 
 .about {
   background-color: $sky3;
-  padding: $section-padding 1em;
+  padding: $section-padding;
   width: calc(100vw - 2em);
 
   .about__intro {
@@ -123,7 +156,7 @@ p,
   @media (min-width: 720px) {
     display: flex;
     flex-direction: row;
-    padding: $section-padding 5em;
+    padding: 0 5em;
     width: calc(100vw - 10em);
 
     .about__intro {
@@ -169,7 +202,7 @@ p,
 }
 
 .projects {
-  background-color: $sky4;
+  background: linear-gradient(to bottom, $sky4 60%, $sky5 100%);
   color: $white;
 
   .projects__list {
@@ -179,23 +212,104 @@ p,
     flex-flow: row wrap;
     justify-content: center;
     list-style: none;
+    margin: 0;
     padding: 0;
+    width: calc(100% - 2rem);
   }
 }
 
 .project {
   color: $black;
-  margin: 1em;
+  margin: 0 1em 1em;
   padding: 1em;
-  text-align: left;
+  perspective: 1000;
+  position: relative;
   width: 100%;
 
-  .project__img {
-    width: 100%;
+  .project__cloud {
+    margin: 0 0 0 -5%;
+    width: 75%;
+  }
+
+  .project__swing {
+    animation: swing 1.5s infinite alternate ease-in-out;
+
+    @keyframes swing {
+      0% { transform: rotate(-1deg) translateX(3px);}
+      100% { transform: rotate(1deg) translateX(-3px);}
+    }
+  }
+
+  .project__card {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 65px 0 1em;
+    pointer-events: none;
+    position: relative;
+    transform-origin: 25% 50% 0;
+    transform-style: preserve-3d;
+    transition: transform 1s linear;
+    width: 200%;
+
+    &.flipped {
+      transform: rotateY(180deg);
+    }
   }
 
   .project__title {
+    backface-visibility: hidden;
     font-weight: 300;
+    margin: 0;
+  }
+
+  .project__p {
+    backface-visibility: hidden;
+    margin: 1em 0 0;
+  }
+
+  .project__front,
+  .project__back {
+    backface-visibility: hidden;
+    background-color: transparent;
+    border: solid 1px $black;
+    cursor: pointer;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-height: 100%;
+    padding: 1em;
+    pointer-events: auto;
+    text-align: left;
+    transform: rotateX(0deg); // This is a Firefox Bug #1201471
+
+    &:before {
+      border: 2px dotted $black;
+      border-bottom: 0;
+      border-left: 0;
+      border-radius: 0 5px 0 0;
+      content: '';
+      height: 100px;
+      left: calc(50% - 52px);
+      position: absolute;
+      top: -52px;
+      transform: rotate(-45deg);
+      width: 100px;
+    }
+  }
+
+  .project__back {
+    backface-visibility: hidden;
+    transform: rotateY(180deg) translateX(100%);
+
+    .project__p {
+      margin: 0;
+    }
+  }
+
+  @for $i from 1 through 10 {
+    &:nth-child(#{$i}) {
+      animation-delay: (#{$i*.5s}); 
+    }
   }
 
   @media (min-width: 480px) {
@@ -203,20 +317,71 @@ p,
     width: calc(50% - 4em);
   }
 
-  @media (min-width: 720px) {
+  @media (min-width: 815px) {
     margin: 2em;
     width: calc(33.33% - 6em);
   }
 }
 
-.experience {
-  background-color: $sky5;
-  color: $white;
+.project__links {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: auto;
+
+  .project__icon {
+    color: $black;
+    margin: 1em 0 0 1em;
+    text-align: center;
+    text-decoration: none;
+
+    .project__icon--svg {
+      width: 2em;
+    }
+
+    .caption {
+      margin: 0;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 .contact {
-  background-color: $sky6;
   color: $white;
+  height: calc(115vh);
+  position: relative;
+
+  @keyframes move-twink-back {
+    from {background-position: 0 0;}
+    to {background-position: -10000px 5000px;}
+  }
+
+  .contact__stars,
+  .contact__twinkling {
+    bottom: 0;
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+  }
+
+  .contact__stars {
+    background: url('../images/stars.png'), linear-gradient(to bottom, $sky5 0%, $sky6 20%) repeat top center;
+    z-index: 0;
+  }
+
+  .contact__twinkling {
+    animation: move-twink-back 500s linear infinite;
+    background: transparent url('../images/twinkling.png'), $sky6 repeat top center;
+    z-index: 1;
+  }
 }
 
 .sky {
