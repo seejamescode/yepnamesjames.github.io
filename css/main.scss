@@ -248,7 +248,7 @@ html,
     position: relative;
     transform-origin: 25% 50% 0;
     transform-style: preserve-3d;
-    transition: transform 1s linear;
+    transition: transform .5s linear;
     width: 200%;
 
     &.flipped {
@@ -307,7 +307,7 @@ html,
   }
 
   @for $i from 1 through 10 {
-    &:nth-child(#{$i}) {
+    &:nth-child(#{$i}) .project__swing {
       animation-delay: (#{$i*.5s}); 
     }
   }
