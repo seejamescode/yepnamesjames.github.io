@@ -21,7 +21,7 @@ $block5: #e0e4cc;
 // Font Sizing
 $scale-small: 1;
 $scale-large: 1;
-$section-padding: 0 1em;
+$section-padding: 0 2em;
 
 h1 { font-size: calc(1.953rem * #{$scale-small}); }
 h2 { font-size: calc(1.563rem * #{$scale-small}); }
@@ -29,7 +29,8 @@ h3 { font-size: calc(1.25rem * #{$scale-small}); }
 p,
 .body { font-size: calc(1rem * #{$scale-small}); }
 
-.caption { font-size: calc(.875rem * #{$scale-small}); }
+.caption,
+.skill { font-size: calc(.875rem * #{$scale-small}); }
 
 @media (min-width: 720px) {
   h1 { font-size: calc(4.236rem * #{$scale-large}); }
@@ -38,7 +39,8 @@ p,
   p,
   .body { font-size: calc(1rem * #{$scale-large}); }
 
-  .caption { font-size: calc(.875rem * #{$scale-small}); }
+  .caption,
+  .skill { font-size: calc(.875rem * #{$scale-small}); }
 }
 
 html,
@@ -62,7 +64,7 @@ html,
   justify-content: center;
   padding: $section-padding 0;
   text-align: center;
-  width: calc(100% - 2em);
+  width: calc(100% - 4em);
 }
 
 .transition {
@@ -82,11 +84,7 @@ html,
   }
 
   &:nth-of-type(3) {
-    background: linear-gradient(to bottom, $sky4 0%, $sky5 100%);
-  }
-
-  &:nth-of-type(4) {
-    background-color: $sky6;
+    background: linear-gradient(to bottom, $sky5 0%, $sky6 100%);
   }
 }
 
@@ -140,7 +138,7 @@ html,
 .about {
   background-color: $sky3;
   padding: $section-padding;
-  width: calc(100vw - 2em);
+  width: calc(100vw - 4em);
 
   .about__intro {
     line-height: 1.75rem;
@@ -351,8 +349,12 @@ html,
 
 .contact {
   color: $white;
-  height: calc(115vh);
+  min-height: 100vh;
   position: relative;
+
+  a {
+    color: $white;
+  }
 
   @keyframes move-twink-back {
     from {background-position: 0 0;}
@@ -373,14 +375,78 @@ html,
   }
 
   .contact__stars {
-    background: url('../images/stars.png'), linear-gradient(to bottom, $sky5 0%, $sky6 20%) repeat top center;
-    z-index: 0;
+    background: $sky6 url('../images/stars.png') repeat top center;
   }
 
   .contact__twinkling {
     animation: move-twink-back 500s linear infinite;
-    background: transparent url('../images/twinkling.png'), $sky6 repeat top center;
-    z-index: 1;
+    background: transparent url('../images/twinkling.png') repeat top center;
+  }
+
+  .contact__choices {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 4em;
+    width: 100%;
+
+    @media (min-width: 480px) {
+      flex-direction: row;
+    }
+  }
+
+  .contact__item {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin: 1em 0;
+  }
+
+  .contact__icon {
+    height: 2em;
+    width: 2em;
+  }
+
+  #twitterFeed {
+    margin-bottom: 4em;
+    text-align: left;
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .user {
+      display: none;
+    }
+
+    .timePosted, .interact {
+      text-align: right;
+    }
+
+    .interact a {
+      margin-left: .5em;
+    }
+  }
+
+  .contact__copyright {
+    bottom: 0;
+    position: absolute;
+    width: calc(100% - 4em);
+  }
+}
+
+.footer {
+  background-color: $sky6;
+
+  .footer__skyline {
+    bottom: 0;
+    display: block;
+    left: 0;
+    min-width: 900px;
+    opacity: 0;
+    width: 100%;
   }
 }
 
@@ -396,7 +462,7 @@ html,
     bottom: 0;
     left: 0;
     min-width: 900px;
-    position: fixed;
+    position: absolute;
     width: 100%;
   }
 

@@ -73,6 +73,7 @@ gulp.task('html', function() {
         .pipe(gulp.dest('static'))
         .pipe(replace('.css', '.min.css'))
         .pipe(replace('sky.js', 'sky.min.js'))
+        .pipe(replace('twitter-post-fetcher.js', 'twitter-post-fetcher.min.js'))
         .pipe(replace('./', './production/'))
         .pipe(gulp.dest('./'))
 });

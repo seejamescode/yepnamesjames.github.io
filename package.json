@@ -27,6 +27,6 @@
   },
   "dependencies": {
     "normalize.css": "*",
-    "web-animations-js": "https://github.com/web-animations/web-animations-js.git"
+    "web-animations-js": "*"
   }
 }
