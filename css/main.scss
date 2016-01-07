@@ -46,14 +46,14 @@ p,
 html,
 .body {
   height: 100%;
+  overflow-x: hidden;
 }
 
 .body {
   color: $black;
-  font-family: 'OpenSans';
+  font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   margin: 0;
-  overflow-x: hidden;
   padding: 0;
 }
 
@@ -130,7 +130,7 @@ html,
     z-index: 1;
 
     h1 {
-      font-size: 3vw;
+      font-size: 3vh;
     }
   }
 }
@@ -142,6 +142,7 @@ html,
 
   .about__intro {
     line-height: 1.75rem;
+    text-align: left;
   }
 
   .about__skills {
@@ -397,10 +398,10 @@ html,
   }
 
   .contact__item {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   margin: 1em 0;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 1em 0;
   }
 
   .contact__icon {
@@ -408,7 +409,7 @@ html,
     width: 2em;
   }
 
-  #twitterFeed {
+  .twitterFeed {
     margin-bottom: 4em;
     text-align: left;
 
@@ -421,11 +422,12 @@ html,
       display: none;
     }
 
-    .timePosted, .interact {
+    .timePosted,
+    .interact {
       text-align: right;
     }
 
-    .interact a {
+    .interact__link {
       margin-left: .5em;
     }
   }
@@ -438,7 +440,7 @@ html,
 }
 
 .footer {
-  background-color: $sky6;
+  background-color: $black;
 
   .footer__skyline {
     bottom: 0;
