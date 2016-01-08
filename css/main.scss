@@ -1,15 +1,13 @@
 $black: #000;
+$grey: #222;
 $blue: #27a9e3;
 $white: #fff;
 
 // Transitioning Gradient Colors
-$sky0: #4a4969;
-$sky1: #7072ab;
+$sky0: #9be2fe;
+$sky1: #3ea0d2;
 $sky2: #ebb2b1;
-$sky3: #94c5f8;
-$sky4: #67d1fb;
-$sky5: #bf5700;
-$sky6: #150800;
+$sky3: #150800;
 
 // Lego Block Colors That Match Sky4
 $block1: #fc8098;
@@ -50,7 +48,7 @@ html,
 }
 
 .body {
-  color: $black;
+  color: $grey;
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   margin: 0;
@@ -65,6 +63,18 @@ html,
   padding: $section-padding 0;
   text-align: center;
   width: calc(100% - 4em);
+
+  &:nth-of-type(1) {
+    background: linear-gradient(to bottom, $sky0 0%, $sky1 100%);
+  }
+
+  &:nth-of-type(2) {
+    background-color: $sky1;
+  }
+
+  &:nth-of-type(3) {
+    background: linear-gradient(to bottom, $sky1 0%, $sky2 50%, $black 100%);
+  }
 }
 
 .transition {
@@ -74,26 +84,13 @@ html,
   @media (min-width: 720px) {
     height: 25vh;
   }
-
-  &:nth-of-type(1) {
-    background: linear-gradient(to bottom, $sky2 0%, $sky3 100%);
-  }
-
-  &:nth-of-type(2) {
-    background: linear-gradient(to bottom, $sky3 0%, $sky4 100%);
-  }
-
-  &:nth-of-type(3) {
-    background: linear-gradient(to bottom, $sky5 0%, $sky6 100%);
-  }
 }
 
 .intro {
-  background: linear-gradient(to bottom, $sky0 0%, $sky1 50%, $sky2 100%);
-  height: calc(85vh - #{$section-padding});
+  height: calc(100vh - #{$section-padding});
 
   @media (min-height: 480px) {
-    height: 90vh;
+    height: 100vh;
   }
 
   .intro__sun {
@@ -136,7 +133,6 @@ html,
 }
 
 .about {
-  background-color: $sky3;
   padding: $section-padding;
   width: calc(100vw - 4em);
 
@@ -146,7 +142,6 @@ html,
   }
 
   .about__skills {
-    color: $black;
     list-style: none;
     padding: 0 5vw;
     text-align: center;
@@ -169,7 +164,7 @@ html,
 }
 
 .skill {
-  border-top: 6px dashed $sky3;
+  border-top: 6px dashed $sky1;
   display: inline-block;
   margin: 4px;
   padding: .6em 1em;
@@ -201,8 +196,7 @@ html,
 }
 
 .projects {
-  background: linear-gradient(to bottom, $sky4 60%, $sky5 100%);
-  color: $white;
+  padding-bottom: 25vh;
 
   .projects__list {
     align-content: flex-end;
@@ -218,7 +212,6 @@ html,
 }
 
 .project {
-  color: $black;
   margin: 0 1em 1em;
   padding: 1em;
   perspective: 1000;
@@ -329,7 +322,6 @@ html,
   margin-top: auto;
 
   .project__icon {
-    color: $black;
     margin: 1em 0 0 1em;
     text-align: center;
     text-decoration: none;
@@ -350,7 +342,7 @@ html,
 
 .contact {
   color: $white;
-  min-height: 100vh;
+  min-height: 75vh;
   position: relative;
 
   a {
@@ -376,7 +368,7 @@ html,
   }
 
   .contact__stars {
-    background: $sky6 url('../images/stars.png') repeat top center;
+    background: $black url('../images/stars.png') repeat top center;
   }
 
   .contact__twinkling {
