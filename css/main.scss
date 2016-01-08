@@ -87,11 +87,7 @@ html,
 }
 
 .intro {
-  height: calc(100vh - #{$section-padding});
-
-  @media (min-height: 480px) {
-    height: 100vh;
-  }
+  min-height: 100vh;
 
   .intro__sun {
     align-items: center;
