@@ -10,7 +10,7 @@ var skyEffects = [
             {transform: 'scale(1.2) translate(-425%, -50%)'}
         ],
         {
-            delay: 2000,
+            delay: 20000,
             duration: 5000,
             iterations: 1
         }
@@ -78,5 +78,25 @@ var skyEffects = [
     )
 ];
 
-var skySequence = new SequenceEffect(skyEffects);
+
+// Knuth Shuffle
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+
+  while (0 !== currentIndex) {
+
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  array[0]._timingInput.delay = 2000;
+
+  return array;
+}
+
+var skySequence = new SequenceEffect(shuffle(skyEffects));
 document.timeline.play(skySequence);
