@@ -249,6 +249,21 @@ html,
     transition: transform .5s linear;
     width: 200%;
 
+    &:before {
+      border: 2px dotted $black;
+      border-bottom: 0;
+      border-left: 0;
+      border-radius: 0 5px 0 0;
+      content: '';
+      height: 100px;
+      left: 76px;
+      outline: none;
+      position: absolute;
+      top: -52px;
+      transform: rotate(-45deg);
+      width: 100px;
+    }
+
     &.flipped {
       transform: rotateY(180deg);
     }
@@ -279,20 +294,6 @@ html,
     pointer-events: auto;
     text-align: left;
     transform: rotateX(0deg); // This is a Firefox Bug #1201471
-
-    &:before {
-      border: 2px dotted $black;
-      border-bottom: 0;
-      border-left: 0;
-      border-radius: 0 5px 0 0;
-      content: '';
-      height: 100px;
-      left: calc(50% - 52px);
-      position: absolute;
-      top: -52px;
-      transform: rotate(-45deg);
-      width: 100px;
-    }
   }
 
   .project__back {

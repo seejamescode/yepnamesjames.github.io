@@ -1,5 +1,25 @@
-function toggleClass(el, className) {
+function toggleProject(el, className) {
     el.parentNode.className = className;
+
+    const buttonFront = el.parentNode.getElementsByClassName("project__front")[0];
+    const buttonBack = el.parentNode.getElementsByClassName("project__back")[0];
+    const links = buttonBack.getElementsByTagName("a");
+
+    if (el.className === 'project__front') {
+        buttonFront.tabIndex = -1;
+        buttonBack.tabIndex = 0;
+        for (i = 0; i < links.length; i++) {
+            links[i].tabIndex = 0;
+        }
+        buttonBack.focus();
+    } else {
+        buttonBack.tabIndex = -1;
+        buttonFront.tabIndex = 0;
+        for (i = 0; i < links.length; i++) {
+            links[i].tabIndex = -1;
+        }
+        buttonFront.focus();
+    }
 }
 
 var skyEffects = [
