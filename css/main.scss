@@ -101,11 +101,11 @@ html,
   }
 
   .intro__logo {
-    animation: rotation 20s infinite linear;
+    animation: rotate 20s infinite linear;
     width: 100%;
     z-index: 0;
 
-    @keyframes rotation {
+    @keyframes rotate {
       from {transform: rotate(0deg);}
       to {transform: rotate(360deg);}
     }
@@ -188,6 +188,16 @@ html,
 
   &:nth-child(5n) {
     background-color: $block5;
+  }
+
+  &:hover {
+    animation: wiggle .25s infinite;
+  }
+
+  @keyframes wiggle {
+    0% {transform: rotate(3deg);}
+    50% {transform: rotate(-3deg);}
+    100% {transform: rotate(3deg);}
   }
 }
 
