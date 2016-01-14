@@ -24,7 +24,7 @@ function toggleProject(el, className) {
 
 var skyEffects = [
     new KeyframeEffect(
-        document.querySelector('.sky__airplane'),
+        document.querySelector('.sky__image--airplane'),
         [
             {transform: 'scale(1) translate(0, 0)'},
             {transform: 'scale(1.2) translate(-425%, -50%)'}
@@ -36,7 +36,7 @@ var skyEffects = [
         }
     ),
     new KeyframeEffect(
-        document.querySelector('.sky__fighter'),
+        document.querySelector('.sky__image--fighter'),
         [
             {transform: 'scale(1) translate(0, 0) rotateZ(0)'},
             {transform: 'scale(1.2) translate(650%, 50%) rotateZ(-15deg)'}
@@ -48,7 +48,7 @@ var skyEffects = [
         }
     ),
     new KeyframeEffect(
-        document.querySelector('.sky__man'),
+        document.querySelector('.sky__image--man'),
         [
             {transform: 'scale(1) translate(0, 0) rotateZ(-20deg)'},
             {transform: 'scale(1.5) translate(-750%, -500%) rotateZ(-10deg)'}
@@ -60,7 +60,7 @@ var skyEffects = [
         }
     ),
     new KeyframeEffect(
-        document.querySelector('.sky__bike'),
+        document.querySelector('.sky__image--bike'),
         [
             {transform: 'translate(0, 0) rotateZ(0)'},
             {transform: 'translate(1100%, -200%) rotateZ(10deg)'},
@@ -73,7 +73,7 @@ var skyEffects = [
         }
     ),
     new KeyframeEffect(
-        document.querySelector('.sky__glider'),
+        document.querySelector('.sky__image--glider'),
         [
             {transform: 'scale(1) translate(0, 0)'},
             {transform: 'scale(1.25) translate(750%, -60%)'}
@@ -85,7 +85,7 @@ var skyEffects = [
         }
     ),
     new KeyframeEffect(
-        document.querySelector('.sky__balloon'),
+        document.querySelector('.sky__image--balloon'),
         [
             {transform: 'scale(1) translate(0, 0)'},
             {transform: 'scale(1.2) translate(-650%, -350%)'}
@@ -116,6 +116,13 @@ function shuffle(array) {
   array[0]._timingInput.delay = 2000;
 
   return array;
+}
+
+var explode = function(obj) {
+  obj.src='./images/explosion.gif';
+  setTimeout(function () {
+    obj.parentNode.removeChild(obj);
+  }, 500)
 }
 
 var skySequence = new SequenceEffect(shuffle(skyEffects));

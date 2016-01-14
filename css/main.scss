@@ -459,7 +459,12 @@ html,
   width: 100vw;
   z-index: 100;
 
-  .sky__skyline {
+  .sky__image {
+    cursor: pointer;
+    pointer-events: all;
+  }
+
+  .sky__image--skyline {
     bottom: 0;
     left: 0;
     min-width: 900px;
@@ -467,42 +472,42 @@ html,
     width: 100%;
   }
 
-  .sky__airplane {
+  .sky__image--airplane {
     left: 100%;
     position: absolute;
     top: 50%;
     width: 25%;
   }
 
-  .sky__fighter {
+  .sky__image--fighter {
     position: absolute;
     right: 100%;
     top: 10%;
     width: 15%;
   }
 
-  .sky__man {
+  .sky__image--man {
     left: 100%;
     position: absolute;
     top: 80%;
     width: 10%;
   }
 
-  .sky__bike {
+  .sky__image--bike {
     position: absolute;
     right: 100%;
     top: 30%;
     width: 5%;
   }
 
-  .sky__glider {
+  .sky__image--glider {
     position: absolute;
     right: 100%;
     top: 60%;
     width: 15%;
   }
 
-  .sky__balloon {
+  .sky__image--balloon {
     left: 100%;
     position: absolute;
     top: 50%;
