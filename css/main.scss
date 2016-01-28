@@ -1,7 +1,7 @@
 $black: #000;
 $grey: #222;
 $blue: #27a9e3;
-$white: #fff;
+$white: #f9f9fb;
 
 // Transitioning Gradient Colors
 $sky0: #9be2fe;
@@ -218,30 +218,40 @@ html,
 }
 
 .project {
-  margin: 0 1em 1em;
-  padding: 1em;
   perspective: 1000;
   position: relative;
   width: 100%;
 
-  .project__cloud {
-    margin: 0 0 0 -5%;
-    width: 75%;
+  @media (min-width: 480px) {
+    margin: 0 1em 1em;
+    padding: 1em;
   }
 
-  .project__swing {
-    animation: swing 1.5s infinite alternate ease-in-out;
+  .project__cloud {
+    display: none;
+  }
 
-    @keyframes swing {
-      0% { transform: rotate(-1deg) translateX(3px);}
-      100% { transform: rotate(1deg) translateX(-3px);}
+  @media (min-width: 480px) {
+    .project__cloud {
+      display: initial;
+      margin: 0 0 0 -5%;
+      width: 75%;
+    }
+
+    .project__swing {
+      animation: swing 1.5s infinite alternate ease-in-out;
+
+      @keyframes swing {
+        0% { transform: rotate(-1deg) translateX(3px);}
+        100% { transform: rotate(1deg) translateX(-3px);}
+      }
     }
   }
 
   .project__card {
     display: flex;
     flex-wrap: wrap;
-    margin: 65px 0 1em;
+    margin: 1em 0;
     pointer-events: none;
     position: relative;
     transform-origin: 25% 50% 0;
@@ -249,19 +259,23 @@ html,
     transition: transform .5s linear;
     width: 200%;
 
-    &:before {
-      border: 2px dotted $black;
-      border-bottom: 0;
-      border-left: 0;
-      border-radius: 0 5px 0 0;
-      content: '';
-      height: 100px;
-      left: calc(25% - 52px);
-      outline: none;
-      position: absolute;
-      top: -52px;
-      transform: rotate(-45deg);
-      width: 100px;
+    @media (min-width: 480px) {
+      margin: 65px 0 1em;
+
+      &:before {
+        border: 2px dotted $black;
+        border-bottom: 0;
+        border-left: 0;
+        border-radius: 0 5px 0 0;
+        content: '';
+        height: 100px;
+        left: calc(25% - 52px);
+        outline: none;
+        position: absolute;
+        top: -52px;
+        transform: rotate(-45deg);
+        width: 100px;
+      }
     }
 
     &.flipped {
@@ -283,8 +297,8 @@ html,
   .project__front,
   .project__back {
     backface-visibility: hidden;
-    background-color: transparent;
-    border: solid 1px $black;
+    background-color: $white;
+    border: solid 5px $black;
     cursor: pointer;
     display: flex;
     flex: 1;
@@ -294,6 +308,41 @@ html,
     pointer-events: auto;
     text-align: left;
     transform: rotateX(0deg); // This is a Firefox Bug #1201471
+  }
+
+  &:nth-child(1n) {
+    .project__front,
+    .project__back {
+      border-color: $block1;
+    }
+  }
+
+  &:nth-child(2n) {
+    .project__front,
+    .project__back {
+      border-color: $block2;
+    }
+  }
+
+  &:nth-child(3n) {
+    .project__front,
+    .project__back {
+      border-color: $block3;
+    }
+  }
+
+  &:nth-child(4n) {
+    .project__front,
+    .project__back {
+      border-color: $block4;
+    }
+  }
+
+  &:nth-child(5n) {
+    .project__front,
+    .project__back {
+      border-color: $block5;
+    }
   }
 
   .project__back {
@@ -317,7 +366,7 @@ html,
   }
 
   @media (min-width: 815px) {
-    margin: 2em;
+    margin: 1em 2em;
     width: calc(33.33% - 6em);
   }
 }
@@ -410,6 +459,7 @@ html,
 
   .twitterFeed {
     margin-bottom: 4em;
+    max-width: 480px;
     text-align: left;
 
     ul {
