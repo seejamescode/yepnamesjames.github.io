@@ -106,7 +106,7 @@ html,
     justify-content: center;
     max-height: 90vh;
     max-width: 90vw;
-    position: relative;
+    position: absolute;
     width: 50vh;
   }
 
@@ -122,13 +122,19 @@ html,
   }
 
   .intro__title {
+    animation: hover 5s infinite alternate ease-in-out;
     font: 5rem 'Chango', sans-serif;
     text-transform: uppercase;
     width: 75vw;
 
+    @keyframes hover {
+      from {transform: translateY(0);}
+      to {transform: translateY(1rem);}
+    }
+
     .intro__title__text {
+      animation: hover 2s infinite alternate ease-in-out;
       fill: $white;
-      stroke: $white;
     }
 
     .intro__title__svg {
