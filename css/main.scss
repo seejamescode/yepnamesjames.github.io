@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Chango|Open+Sans:400,300);
+
 $black: #000;
 $grey: #222;
 $blue: #27a9e3;
@@ -75,6 +77,10 @@ html,
   &:nth-of-type(3) {
     background: linear-gradient(to bottom, $sky1 0%, $sky2 50%, $black 100%);
   }
+
+  &.section--intro {
+    min-height: 100vh;
+  }
 }
 
 .transition {
@@ -87,11 +93,15 @@ html,
 }
 
 .intro {
-  min-height: 100vh;
+  align-items: center;
+  display: flex;
+  flex: 2;
+  flex-direction: column;
+  justify-content: center;
 
   .intro__sun {
     align-items: center;
-    display: flex;
+    display: none;
     height: 50vh;
     justify-content: center;
     max-height: 90vh;
@@ -112,19 +122,23 @@ html,
   }
 
   .intro__title {
-    align-items: center;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 1;
+    font: 5rem 'Chango', sans-serif;
+    text-transform: uppercase;
+    width: 75vw;
 
-    h1 {
-      font-size: 3vh;
+    .intro__title__text {
+      fill: $white;
+      stroke: $white;
     }
+
+    .intro__title__svg {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .intro__slogan {
+    margin-top: 0;
   }
 }
 
@@ -454,6 +468,7 @@ html,
 
   .contact__icon {
     height: 2em;
+    margin-bottom: .5em;
     width: 2em;
   }
 
@@ -488,10 +503,12 @@ html,
   }
 }
 
-.footer {
-  background-color: $black;
+.filler {
+  &.filler--footer {
+    background-color: $black;
+  }
 
-  .footer__skyline {
+  .filler__skyline {
     bottom: 0;
     display: block;
     left: 0;

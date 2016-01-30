@@ -6,31 +6,55 @@
 		<title>James Y Rauhut</title>
 	</head>
 	<body class="body">
-		<section class="section intro">
-      <div class="intro__sun">
-  			<svg class="intro__logo" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 810 810" style="enable-background:new 0 0 810 810;" xml:space="preserve">
-  				<style type="text/css">
-  					.st0{fill:#FFB848;stroke:#FFFFFF;stroke-width:5;stroke-miterlimit:10;}
-  				</style>
-  				<circle class="st0" cx="405" cy="405" r="200"/>
-  				<g>
-  					<polygon class="st0 shine__part" points="378.8,158.6 404.2,15.1 430.1,158.5 	"/>
-  					<polygon class="st0 shine__part" points="212.2,249.3 128.7,129.8 248.4,212.9 	"/>
-  					<polygon class="st0 shine__part" points="158.5,431.2 15,405.8 158.4,379.9 	"/>
-  					<polygon class="st0 shine__part" points="249.2,597.8 129.8,681.3 212.8,561.6 	"/>
-  					<polygon class="st0 shine__part" points="431.1,651.5 405.7,795 379.8,651.6 	"/>
-  					<polygon class="st0 shine__part" points="597.7,560.8 681.2,680.2 561.6,597.2 	"/>
-  					<polygon class="st0 shine__part" points="651.4,378.9 794.9,404.3 651.5,430.2 	"/>
-  					<polygon class="st0 shine__part" points="560.7,212.3 680.2,128.8 597.1,248.4 	"/>
-  				</g>
-  			</svg>
-        <div class="intro__title">
-          <h1>James Y<br>Rauhut</h1>
+		<section class="section section--intro">
+      <div class="intro">
+        <div class="intro__sun">
+    			<svg class="intro__logo" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 810 810" style="enable-background:new 0 0 810 810;" xml:space="preserve">
+    				<style type="text/css">
+    					.st0{fill:#FFB848;stroke:#FFFFFF;stroke-width:5;stroke-miterlimit:10;}
+    				</style>
+    				<circle class="st0" cx="405" cy="405" r="200"/>
+    				<g>
+    					<polygon class="st0 shine__part" points="378.8,158.6 404.2,15.1 430.1,158.5 	"/>
+    					<polygon class="st0 shine__part" points="212.2,249.3 128.7,129.8 248.4,212.9 	"/>
+    					<polygon class="st0 shine__part" points="158.5,431.2 15,405.8 158.4,379.9 	"/>
+    					<polygon class="st0 shine__part" points="249.2,597.8 129.8,681.3 212.8,561.6 	"/>
+    					<polygon class="st0 shine__part" points="431.1,651.5 405.7,795 379.8,651.6 	"/>
+    					<polygon class="st0 shine__part" points="597.7,560.8 681.2,680.2 561.6,597.2 	"/>
+    					<polygon class="st0 shine__part" points="651.4,378.9 794.9,404.3 651.5,430.2 	"/>
+    					<polygon class="st0 shine__part" points="560.7,212.3 680.2,128.8 597.1,248.4 	"/>
+    				</g>
+    			</svg>
         </div>
+        <div class="intro__title">
+          <svg class="intro__title__svg" viewBox="0 0 500 250">
+            <symbol id="s-text">
+              <text text-anchor="middle" x="50%" y="35%" dy=".35em" class="intro__title__text">
+                James Y
+              </text>
+              <text text-anchor="middle" x="50%" y="65%" dy=".35em" class="intro__title__text">
+                Rauhut
+              </text>  
+            </symbol>
+            <mask id="m-text"
+                  maskunits="userSpaceOnUse"
+                  maskcontentunits="userSpaceOnUse">
+              <use xlink:href="#s-text"
+                   class="intro__title__text"
+                   ></use>
+            </mask>
+            <g mask="url(#m-text)">
+              <image xlink:href="./production/images/clouds-logo.gif" width="500" height="1000" x="0%" y="-70%"></image>
+            </g>
+          </svg>
+        </div>
+  			<h3 class="intro__slogan">
+  				Designing a brighter web.
+  			</h3>
       </div>
-			<h3 class="intro__slogan">
-				Designing a brighter web.
-			</h3>
+      <div class="filler">
+        <img class="filler__skyline" src="./production/images/austin-skyline.png">
+      </div>
 		</section>
 		<section class="section about">
 			<div class="about__intro">
@@ -251,8 +275,8 @@
       </div>
       <p class="caption contact__copyright">&copy; 2016 James Y Rauhut. All rights reserved.</p>
     </section>
-    <div class="footer">
-      <img class="footer__skyline" src="./production/images/austin-skyline.png">
+    <div class="filler filler--footer">
+      <img class="filler__skyline" src="./production/images/austin-skyline.png">
     </div>
 		<section class="sky">
 			<img class="sky__image--skyline" src="./production/images/austin-skyline.png">
